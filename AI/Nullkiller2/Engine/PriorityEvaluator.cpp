@@ -1556,6 +1556,7 @@ float PriorityEvaluator::evaluate(Goals::TSubgoal task, int priorityTier)
 				if(maxWillingToLose - evaluationContext.armyLossRatio < 0)
 					return 0;
 
+				// TODO: Mircea: Paths via boat don't see danger until they disembark. Logic should look a bit ahead
 				if(priorityTier == EXPLORE_AND_GATHER && evaluationContext.enemyHeroDangerRatio > maxEnemyDangerRatio)
 					return 0;
 				if(priorityTier == ESCAPE && task->hero)
